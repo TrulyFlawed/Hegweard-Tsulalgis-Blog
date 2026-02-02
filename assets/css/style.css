@@ -1,6 +1,5 @@
-
 @font-face{
-    src: url(fonts/pt-mono.ttf);
+    src: url(/assets/fonts/pt-mono.ttf);
     font-family: pt-mono-ttf;
 }
 
@@ -21,6 +20,12 @@
         color: rgb(255, 140, 0);
     }
 
+}
+
+*,
+*::before,
+*::after {
+    font-family: pt-mono-ttf;
 }
 
 .center {
@@ -44,7 +49,6 @@ header, main, div{
 }
 
 article{
-    font-family: 'pt-mono-ttf';
     font-size: 1rem;
     text-wrap: pretty wrap;
     width: 70ch;
@@ -53,11 +57,15 @@ article{
 
 footer{
     text-align: center;
-    font-size: -1rem;
+    font-size: 0.85rem;
 }
 
 .menubarsoicals ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+article img {
+    width: 100%;
 }
