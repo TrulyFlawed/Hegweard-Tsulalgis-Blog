@@ -1,68 +1,67 @@
+---
+---
 <!doctype html>
 <html>
 
 <head>
-<title>Hegweard Tsulalgi's Blog</title>
-<link rel="icon" type="image/jpg" href="/Hegweard-Tsulalgis-Blog/Images/profile.jpg">
-<meta name="This is a personal blog made as a hobby project all made by one gal" content="Blog">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+    <title>Hegweard Tsulalgi's Blog</title>
+    <link rel="icon" type="image/jpg" href="{{ site.baseurl }}/assets/images/profile.jpg">
+    <meta name="This is a personal blog made as a hobby project all made by one gal" content="Blog">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 
-<style>
-</style>
-    
 <body>
-<header>
-<h1>Hegweard Tsulalgi's Blog!</h1>
-<p>This blog is inspired by blogs like <a target="_blank" href="https://drewdevault.com/">Drew DeVault's</a> blog</p>
-</header>
+    <header>
+        <h1>Hegweard Tsulalgi's Blog!</h1>
+        <p>This blog is inspired by blogs like <a target="_blank" href="https://drewdevault.com/">Drew DeVault's</a>
+            blog</p>
+    </header>
 
-<Main>
-<section id="Profile">
-<img src="Images/profile.jpg" alt="This is a picture of a Fox" height="200">
+    <main>
+        <section id="Profile">
+            <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="This is a picture of a Fox" height="200">
 
-<section id="Email">
-<p>Email <a href="mailto:Hegweard_Tsulalgi@proton.me">HegweardTsulalgi@proton.me</a></p>
-</section>
+            <section id="Email">
+                <p>Email <a href="mailto:Hegweard_Tsulalgi@proton.me">HegweardTsulalgi@proton.me</a></p>
+            </section>
 
-</section>
+        </section>
 
-<section class="Pride flag">
-<img alt="Pride Flag" src="Images/pride.svg" height="60">
-</section>
+        <section class="Pride flag">
+            <img alt="Pride Flag" src="{{ site.baseurl }}/assets/images/pride.svg" height="60">
+        </section>
 
-<br>
+        <br>
 
-<section class="No AI">
-<img alt="No AI" src="Images/no-ai-icon-01.svg" height="70">
-</section>
+        <section class="No AI">
+            <a href="{% link _pages/ai.md %}">
+                <img alt="No AI" src="{{ site.baseurl }}/assets/images/no-ai-icon-01.svg" height="70">
+            </a>
+        </section>
 
-<section id="article-list">
-<h2> Blog Pages </h2>
+        <br>
 
-<div class="article">
-<span class="date">February 23, 2026</span>
-<a href="pages/Blog-Pages/Using-Windows-XP-in-2026/Using-Windows-XP-in-2026.html"
-class="center">Using Windows XP in 2026</a>
-</div>
+        <section>
+            <a href="{% link _pages/socials.html %}">Socials</a>
+        </section>
 
-<br>
+        <section id="article-list">
+            <h2> Blog Pages </h2>
 
-<div class="article">
-<span class="date">November 24, 2025</span>
-<a href="pages/Blog-Pages/Start-Of-Blog/Start-Of-Blog.html"
-class="center">This is the start of a new blog!</a>
-</div>
-            
-<br>
+            <!-- Automatically generate list of blog posts. -->
+            {% for post in site.posts %}
+                <div class="article">
+                    <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                    <a href="{{ post.url }}" class="center">{{ post.title }}</a>
+                </div>
+                <br />
+            {% endfor %}
+        </section>
+    </main>
 
-</section>
-</Main>
-
-<footer>
-<p>The content for this site is <a target="_blank" href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA.</a> The <a target="_blank" href="https://github.com/">Source Code</a> is licensed under <a target="_blank" href="/LICENSE.txt">GPL-V3</a></p>
-</footer>
+    {% include footer.html %}
 </body>
+
 </html>
